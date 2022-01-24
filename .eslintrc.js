@@ -1,11 +1,14 @@
 module.exports = {
 	'env': {
 		'browser': true,
-		'es2021': true
+		'es2021': true,
+		'es6': true,
+		'node': true,
 	},
 	'extends': [
 		'eslint:recommended',
 		'plugin:react/recommended',
+		'prettier',
 	],
 	'parserOptions': {
 		'ecmaFeatures': {
@@ -18,10 +21,6 @@ module.exports = {
 		'react',
 	],
 	'rules': {
-		'indent': [
-			'error',
-			'tab'
-		],
 		'linebreak-style': [
 			'error',
 			'unix'
