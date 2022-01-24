@@ -1,8 +1,8 @@
 import { useState } from 'react'
+import { SwiperSlide } from 'swiper/react'
 import { ProgramItem } from '../../atoms/program-item/program-item'
-import { ScrollerContainer } from '../../atoms/scroller-container'
-import { ProgramListTopBar } from '../../molecules'
-import { ProgramListFooter } from '../../molecules/program-list-footer'
+import { ScrollerContainer } from '../../atoms'
+import { ProgramListTopBar, ProgramListFooter } from '../../molecules'
 import { listOfPrograms } from './program-list-mock'
 import styles from './program-list.module.scss'
 
@@ -16,14 +16,15 @@ export const ProgramList = () => {
                 {listOfPrograms.map(({ icon, label, subLabel }, index) => {
                     const key = `${label}-${index}`
                     return (
-                        <ProgramItem
-                            key={key}
-                            icon={icon}
-                            label={`${label} ${index}`}
-                            subLabel={subLabel}
-                            isActive={activeItem === key}
-                            onClick={() => setActiveItem(key)}
-                        />
+                        <SwiperSlide key={key}>
+                            <ProgramItem
+                                icon={icon}
+                                label={`${label} ${index + 1}`}
+                                subLabel={subLabel}
+                                isActive={activeItem === key}
+                                onClick={() => setActiveItem(key)}
+                            />
+                        </SwiperSlide>
                     )
                 })}
             </ScrollerContainer>

@@ -1,5 +1,12 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
+    width: 100%;
+}
+
+.scrollbar {
+    background: var(--color-primary);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
 }
