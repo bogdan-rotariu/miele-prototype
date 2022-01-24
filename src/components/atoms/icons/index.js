@@ -1,0 +1,5 @@
+export * from './home-icon'
+export * from './plane-icon'
+export * from './users-icon'
+export * from './umbrella-icon'
+export * from './flag-icon'

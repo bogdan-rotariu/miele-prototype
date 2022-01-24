@@ -1,2 +1,2 @@
-export * from './home-icon'
+export * from './icons'
 export * from './styled-button'
