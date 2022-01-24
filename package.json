@@ -20,23 +20,8 @@
     "build-storybook": "build-storybook -s public",
     "lint:prettier": "prettier --check src/.",
     "lint:prettier:fix": "prettier --write src/.",
-    "lint:eslint": "eslint ."
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
+    "lint:js": "eslint .",
+    "lint:js:fix": "lint:js --fix"
   },
   "browserslist": {
     "production": [
