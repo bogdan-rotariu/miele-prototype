@@ -8,9 +8,13 @@ export const ProgramListTopBar = () => {
 
     return (
         <ul className={styles.list}>
-            <li><HomeIcon /></li>
+            <li>
+                <HomeIcon />
+            </li>
             {list.map((listItem, idx) => (
-                <li key={`${listItem}-${idx}`} className={styles.item}>{listItem}</li>
+                <li key={`${listItem}-${idx}`} className={styles.item}>
+                    {listItem}
+                </li>
             ))}
             <li className={styles.item}>{currentTime}</li>
         </ul>

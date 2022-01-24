@@ -3,7 +3,8 @@
     font-style: normal;
     font-weight: 400;
     font-display: block;
-    src: url('/fonts/roboto-condensed-v19-latin-regular.woff2') format('woff2'), url('/fonts/roboto-condensed-v19-latin-regular.woff') format('woff');
+    src: url('/fonts/roboto-condensed-v19-latin-regular.woff2') format('woff2'),
+        url('/fonts/roboto-condensed-v19-latin-regular.woff') format('woff');
 }
 
 :root {
@@ -14,12 +15,14 @@
     --color-dark-100: rgb(39, 39, 39);
     --color-dark-80: rgb(64, 64, 64);
     --color-dark-60: rgb(125, 125, 125);
+    --color-primary: rgb(242, 157, 57);
 }
 
 html,
 body {
     height: 100%;
     margin: 0;
-    font: var(--typography-font-weight-regular) var(--typography-font-size) var(--typography-roboto-font-family);
+    font: var(--typography-font-weight-regular) var(--typography-font-size)
+        var(--typography-roboto-font-family);
     color: var(--color-black-100);
 }

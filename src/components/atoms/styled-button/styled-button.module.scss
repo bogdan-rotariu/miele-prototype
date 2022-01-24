@@ -1,0 +1,22 @@
+.button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--color-white);
+    font-family: var(--typography-roboto-font-family);
+    font-size: 1.25rem;
+    outline: 0;
+
+    &:not(:disabled):hover {
+        opacity: 0.9;
+    }
+}
+
+.disabled {
+    color: var(--color-dark-60);
+    cursor: not-allowed;
+}
+
+.active {
+    color: var(--color-primary);
+}
