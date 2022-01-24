@@ -1,0 +1,23 @@
+.container {
+    align-items: center;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--color-white);
+    display: flex;
+    font-size: 1.25rem;
+    flex-direction: column;
+    flex: 1 0 auto;
+    padding: 0;
+    outline: 0;
+    padding: 1rem 2rem;
+}
+
+.active {
+    color: var(--color-primary);
+}
+
+.icon {
+    font-size: 3.5rem;
+    margin: 1rem 0;
+}
