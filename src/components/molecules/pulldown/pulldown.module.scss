@@ -34,11 +34,11 @@
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
-    border-top: 4px solid var(--color-primary);
+    border-top: 2px solid var(--color-primary);
     cursor: pointer;
     display: flex;
     position: relative;
-    top: calc(1rem + 0.5rem);
+    top: calc(1rem + 6px);
     width: 3rem;
     margin: 0 auto;
     outline: 0;
