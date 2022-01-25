@@ -1,5 +1,5 @@
 import { array } from 'prop-types'
-import { HomeIcon } from '../../atoms'
+import { HomeIcon } from '../../atoms/icons'
 import { useCurrentTime } from '../../../hooks'
 import styles from './program-list-top-bar.module.scss'
 

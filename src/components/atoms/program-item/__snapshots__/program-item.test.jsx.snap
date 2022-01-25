@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgramItem should match snapshot if render correctly 1`] = `
+<button
+  class="container"
+>
+  <span
+    class="icon"
+  />
+  <span
+    class="label"
+  >
+    Label
+  </span>
+  <span
+    class="subLabel"
+  >
+    sub label
+  </span>
+</button>
+`;

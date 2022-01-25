@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button } from '../../atoms'
+import { Button } from '../../atoms/styled-button'
 import styles from './program-list-footer.module.scss'
 
 export const ProgramListFooter = () => {

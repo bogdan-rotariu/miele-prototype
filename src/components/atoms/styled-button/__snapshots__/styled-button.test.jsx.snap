@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should match snapshot 1`] = `
+<button
+  class="button"
+>
+  button
+</button>
+`;
+
+exports[`Button should match snapshot if disabled 1`] = `
+<button
+  class="button disabled"
+  disabled=""
+>
+  button
+</button>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgramListFooter should match snapshot 1`] = `
+<footer
+  class="footer"
+>
+  <button
+    class="button"
+  >
+    Back
+  </button>
+  <button
+    class="button disabled"
+    disabled=""
+  >
+    Inactive Button
+  </button>
+</footer>
+`;
