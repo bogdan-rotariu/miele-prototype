@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { ProgramList } from './components/organisms'
 import './index.scss'
 
