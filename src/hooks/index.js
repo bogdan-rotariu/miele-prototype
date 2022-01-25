@@ -1,1 +1,1 @@
-export * from './useCurrentTime'
+export * from './use-current-time'
