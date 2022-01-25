@@ -5,13 +5,12 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: auto;
     pointer-events: none;
     transition: background-color 0.15s ease-in;
+    z-index: 1;
 }
 
 .active {
     background-color: rgba(64, 64, 64, 0.8);
-    z-index: 1;
     pointer-events: all;
 }

@@ -20,7 +20,7 @@ export const Pulldown = ({ children }) => {
                 <button
                     className={styles.handle}
                     onClick={() => setIsActive(!isActive)}
-                ></button>
+                />
             </div>
         </Overlay>
     )

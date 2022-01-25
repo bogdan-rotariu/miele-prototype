@@ -13,6 +13,7 @@
 
     display: grid;
     grid-template-rows: 1fr min-content;
+    transition: transform 0.25s ease-in;
 }
 
 .pulldownActive {
