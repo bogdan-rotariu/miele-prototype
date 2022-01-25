@@ -1,10 +1,12 @@
+import { array } from 'prop-types'
 import { HomeIcon } from '../../atoms'
 import { useCurrentTime } from '../../../hooks'
 import styles from './program-list-top-bar.module.scss'
 
-export const ProgramListTopBar = () => {
+const listOfItems = ['Programmes', 'Favorites']
+
+export const ProgramListTopBar = ({ list = listOfItems }) => {
     const currentTime = useCurrentTime()
-    const list = ['Programmes', 'Favorites']
 
     return (
         <ul className={styles.list}>
@@ -19,4 +21,8 @@ export const ProgramListTopBar = () => {
             <li className={styles.item}>{currentTime}</li>
         </ul>
     )
+}
+
+ProgramListTopBar.propTypes = {
+    list: array,
 }

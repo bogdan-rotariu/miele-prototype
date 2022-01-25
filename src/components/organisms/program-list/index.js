@@ -1,1 +1,1 @@
-export * from './program-list'
+export { ProgramList } from './program-list'

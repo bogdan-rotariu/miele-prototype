@@ -4,9 +4,7 @@
 
     display: grid;
     grid-template-rows: min-content 1fr min-content;
-    width: 700px;
-    // width: max(400px, 50%);
-    // height: 50vh;
+    width: 700px; // fixed size estimation
     position: absolute;
     top: 50%;
     left: 50%;

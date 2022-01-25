@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { SwiperSlide } from 'swiper/react'
-import { ProgramItem } from '../../atoms/program-item/program-item'
-import { ScrollerContainer } from '../../atoms'
+import { ScrollerContainer, ProgramItem } from '../../atoms'
 import { ProgramListTopBar, ProgramListFooter } from '../../molecules'
 import { listOfPrograms } from './program-list-mock'
 import styles from './program-list.module.scss'
