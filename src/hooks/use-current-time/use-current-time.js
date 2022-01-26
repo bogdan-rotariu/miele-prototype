@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react'
 
+const getCurrentTime = () => {
+    const today = new Date()
+    const hours = today.getHours()
+    const mins = today.getMinutes()
+    return {
+        hours,
+        mins,
+    }
+}
+
 export const useCurrentTime = () => {
     const [{ hours, mins }, setTime] = useState({ hours: null, mins: null })
 
-    const setCurrentTime = () => {
-        const today = new Date()
-        const currentHr = today.getHours()
-        const currentMin = today.getMinutes()
-        if (hours === currentHr && mins === currentMin) {
-            return
-        }
-        return setTime({ hours: currentHr, mins: currentMin })
-    }
-
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentTime()
+            const { hours, mins } = getCurrentTime()
+            return setTime({ hours, mins })
         }, 1000)
         return () => clearInterval(interval)
     }, [])

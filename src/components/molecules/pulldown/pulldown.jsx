@@ -37,7 +37,7 @@ export const Pulldown = ({ children }) => {
         <Overlay isActive={toggle}>
             <animated.div
                 style={{
-                    transform: y.interpolate((y) => `translateY(${y}px)`),
+                    transform: y.to((y) => `translateY(${y}px)`),
                 }}
                 className={styles.pulldown}
             >
