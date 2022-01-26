@@ -5,9 +5,9 @@ import { node } from 'prop-types'
 import { Overlay, Button } from '../../atoms'
 import styles from './pulldown.module.scss'
 
-//I have used fixed sizes for offsetting, while being in a rush to learn the @use-gesture API. It would be of course a good idea to ref an element and get the proper height and offsets from the element
-const OFFSET = 229
-
+// I have used fixed offset value, while being in a rush to learn the @use-gesture API.
+// It would be of course a good idea to ref an element and get the proper height and offsets from the element
+const OFFSET = 230
 export const Pulldown = ({ children }) => {
     const [toggle, setToggle] = useState(false)
     const [{ y }, api] = useSpring(() => ({ y: -OFFSET }))
@@ -16,6 +16,8 @@ export const Pulldown = ({ children }) => {
         api.start({ y: -OFFSET })
     }
 
+    // The pulldown does not work on click to open yet,
+    // there could be some improvements made, but I ran out of time
     const bind = useDrag(
         ({ last, movement: [, my] }) => {
             if (last) {
