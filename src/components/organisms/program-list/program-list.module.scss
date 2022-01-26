@@ -1,12 +1,17 @@
 .container {
-    background: var(--color-dark-100);
-    color: var(--color-white);
-
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
     width: 700px; // fixed size estimation
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.inner {
+    background: var(--color-dark-100);
+    color: var(--color-white);
+
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    position: relative;
 }
