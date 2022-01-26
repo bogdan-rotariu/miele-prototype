@@ -11,13 +11,15 @@ const OFFSET = 229
 export const Pulldown = ({ children }) => {
     const [toggle, setToggle] = useState(false)
     const [{ y }, api] = useSpring(() => ({ y: -OFFSET }))
-    const closePulldown = () => api.start({ y: -OFFSET })
+    const closePulldown = () => {
+        setToggle(false)
+        api.start({ y: -OFFSET })
+    }
 
     const bind = useDrag(
         ({ last, movement: [, my] }) => {
             if (last) {
                 if (my < OFFSET / 2) {
-                    setToggle(false)
                     return closePulldown()
                 }
                 setToggle(true)
@@ -32,7 +34,6 @@ export const Pulldown = ({ children }) => {
     return (
         <Overlay isActive={toggle}>
             <animated.div
-                {...bind()}
                 style={{
                     transform: y.interpolate((y) => `translateY(${y}px)`),
                 }}
@@ -42,7 +43,7 @@ export const Pulldown = ({ children }) => {
                 <footer className={styles.footer}>
                     <Button onClick={() => closePulldown()}>Close</Button>
                 </footer>
-                <button className={styles.handle} />
+                <button {...bind()} className={styles.handle} />
             </animated.div>
         </Overlay>
     )
