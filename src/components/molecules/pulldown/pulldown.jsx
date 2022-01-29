@@ -11,7 +11,7 @@ const OFFSET = 230
 export const Pulldown = ({ children }) => {
     const [toggle, setToggle] = useState(false)
     const [{ y }, api] = useSpring(() => ({ y: -OFFSET }))
-    
+
     const close = () => {
         setToggle(false)
         api.start({ y: -OFFSET })
@@ -24,7 +24,7 @@ export const Pulldown = ({ children }) => {
 
     const bind = useDrag(
         ({ last, movement: [, my], tap }) => {
-            if(tap && !toggle) return open()
+            if (tap && !toggle) return open()
             if (tap && toggle) return close()
 
             if (last) {
