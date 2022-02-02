@@ -28,14 +28,19 @@ export const Pulldown = ({ children }) => {
             if (tap && toggle) return close()
 
             if (last) {
-                if (my < OFFSET / 2) {
+                const isOpenAndOverThreshold = toggle && Math.abs(my) > OFFSET / 2
+                const isClosedAndUnderThreshold = !toggle && Math.abs(my) < OFFSET / 2
+
+                if (isClosedAndUnderThreshold || isOpenAndOverThreshold) {
                     return close()
                 }
                 return open()
             }
-            api.start({ y: -OFFSET + my })
+
+            const start = toggle ? 0 : -OFFSET
+            api.start({ y: start + my })
         },
-        { bounds: { top: 0 }, filterTaps: true, threshold: 10 },
+        { filterTaps: true, threshold: 10 },
     )
 
     return (
