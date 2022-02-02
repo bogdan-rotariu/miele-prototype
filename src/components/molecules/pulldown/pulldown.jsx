@@ -11,26 +11,36 @@ const OFFSET = 230
 export const Pulldown = ({ children }) => {
     const [toggle, setToggle] = useState(false)
     const [{ y }, api] = useSpring(() => ({ y: -OFFSET }))
-    const closePulldown = () => {
+
+    const close = () => {
         setToggle(false)
         api.start({ y: -OFFSET })
     }
 
-    // The pulldown does not work on click to open yet,
-    // there could be some improvements made, but I ran out of time
+    const open = () => {
+        setToggle(true)
+        api.start({ y: 0 })
+    }
+
     const bind = useDrag(
-        ({ last, movement: [, my] }) => {
+        ({ last, movement: [, my], tap }) => {
+            if (tap && !toggle) return open()
+            if (tap && toggle) return close()
+
             if (last) {
-                if (my < OFFSET / 2) {
-                    return closePulldown()
+                const isOpenAndOverThreshold = toggle && Math.abs(my) > OFFSET / 2
+                const isClosedAndUnderThreshold = !toggle && Math.abs(my) < OFFSET / 2
+
+                if (isClosedAndUnderThreshold || isOpenAndOverThreshold) {
+                    return close()
                 }
-                setToggle(true)
-                return api.start({ y: 0 })
+                return open()
             }
 
-            api.start({ y: -OFFSET + my })
+            const start = toggle ? 0 : -OFFSET
+            api.start({ y: start + my })
         },
-        { bounds: { top: 0 }, filterTaps: true, threshold: 10 },
+        { filterTaps: true, threshold: 10 },
     )
 
     return (
@@ -43,7 +53,7 @@ export const Pulldown = ({ children }) => {
             >
                 <div className={styles.body}>{children}</div>
                 <footer className={styles.footer}>
-                    <Button onClick={() => closePulldown()}>Close</Button>
+                    <Button onClick={() => close()}>Close</Button>
                 </footer>
                 <button {...bind()} className={styles.handle} />
             </animated.div>
